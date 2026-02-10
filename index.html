@@ -1,35 +1,66 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Web Training</title>
-  <style>
-    body{
-      font-family: Tahoma, Arial;
-      background:#f5f7fa;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-      margin:0;
-    }
-    .box{
-      background:#fff;
-      padding:30px;
-      border-radius:12px;
-      box-shadow:0 10px 25px rgba(0,0,0,.1);
-      text-align:center;
-      width:300px;
-    }
-    h1{color:#333;}
-    p{color:#666;}
-  </style>
+<meta charset="UTF-8">
+<title>النواة المظلمة</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="ui.css">
 </head>
-<body>
-  <div class="box">
-    <h1>Web Training 🚀</h1>
-    <p>أول مشروع لي على GitHub Pages</p>
+
+<body class="theater">
+
+<div id="gate" class="gate active">
+  <div class="gate-box glitch">
+    <p class="xl red">يتطلب إدخال الهوية</p>
+    <p class="dim s">محاكاة تعليمية — للعرض فقط</p>
+
+    <input id="name" placeholder="الاسم الكامل">
+    <input id="phone" type="tel" placeholder="رقم الهاتف">
+
+    <button onclick="enter()">متابعة</button>
+    <p class="warning">⚠ البيانات تُخزن محليًا فقط</p>
   </div>
+</div>
+
+<div id="blackout" class="blackout"></div>
+
+<div id="panicBtn" title="خروج طارئ"></div>
+<div id="panicOverlay">
+  <div class="panic-text">تم إيقاف العرض</div>
+</div>
+
+<main id="stage">
+
+<section class="scene active" id="s1">
+  <div class="pulse"></div>
+  <p class="xl">النواة المظلمة</p>
+  <p class="dim">محاكاة نفسية صامتة</p>
+  <button class="enter" onclick="start()">ابدأ</button>
+</section>
+
+<section class="scene black" id="s2">
+  <p class="l flicker">جارِ تحليل الهوية…</p>
+</section>
+
+<section class="scene" id="s3">
+  <p class="l red">البيانات المرتبطة</p>
+  <div class="analysis" id="dataView"></div>
+</section>
+
+<section class="scene" id="s4">
+  <p class="xl red" id="countdown">٣</p>
+  <p class="dim">التهيئة النهائية</p>
+</section>
+
+<section class="scene final" id="s5">
+  <p class="xl red glitch">تم تقييد الجلسة</p>
+  <p class="l" id="threat"></p>
+  <button class="wipe" onclick="wipe()">مسح البيانات</button>
+  <p class="s dim">⚠ عرض تمثيلي — لا تحكم فعلي</p>
+</section>
+
+</main>
+
+<script src="mind.js"></script>
 </body>
 </html>

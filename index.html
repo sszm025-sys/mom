@@ -161,6 +161,15 @@ html,body{
   color:#fff;
   cursor:pointer;
 }
+
+/* Footer */
+footer{
+  margin-top:40px;
+  text-align:center;
+  color:#555;
+  font-size:.75rem;
+  letter-spacing:.12em;
+}
 </style>
 </head>
 
@@ -215,6 +224,13 @@ html,body{
   <p class="l" id="threat"></p>
   <button class="wipe" onclick="wipe()">مسح البيانات</button>
   <p class="s dim">⚠ عرض تمثيلي فقط</p>
+
+  <!-- معلومات المبرمج -->
+  <footer>
+    <div>البرمجة: محمد أحمد زياد</div>
+    <div>رقم الهاتف: 772353780</div>
+    <div id="dateLine"></div>
+  </footer>
 </section>
 
 </main>
@@ -299,6 +315,12 @@ let t=null;
 pBtn.onmousedown=()=>t=setTimeout(()=>pOv.classList.add('active'),1500);
 pBtn.onmouseup=()=>clearTimeout(t);
 pBtn.onmouseleave=()=>clearTimeout(t);
+
+/* التاريخ (اليوم + السنة) بالعربي */
+const days=["الأحد","الاثنين","الثلاثاء","الأربعاء","الخميس","الجمعة","السبت"];
+const d=new Date();
+document.getElementById("dateLine").textContent =
+  `التاريخ: ${days[d.getDay()]} • ${d.getFullYear()}`;
 </script>
 
 </body>

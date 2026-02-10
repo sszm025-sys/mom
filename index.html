@@ -4,241 +4,186 @@
 <meta charset="UTF-8">
 <title>بطولة الحداء – محافظة ذمار</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Cairo',sans-serif;
-  background:#f3f5f4;
-  color:#1f2933;
-  line-height:1.8
-}
-.container{width:90%;max-width:1200px;margin:auto}
-.flex{display:flex;justify-content:space-between;align-items:center}
-section{padding:90px 0}
-.title{text-align:center;font-size:32px;font-weight:900;margin-bottom:20px}
-.desc{text-align:center;opacity:.9;max-width:900px;margin:auto}
+body{font-family:'Cairo',sans-serif;background:#f4f6f5;color:#1f2933}
+.container{width:94%;max-width:1100px;margin:auto}
+section{padding:50px 0}
+.title{text-align:center;font-size:26px;font-weight:900;margin-bottom:12px}
+.desc{text-align:center;opacity:.85}
 
 /* HEADER */
-header{
-  background:#06261c;
-  position:sticky;
-  top:0;
-  z-index:100
-}
-header .flex{padding:18px 0}
-.logo{color:#fff;font-size:22px;font-weight:900}
-nav a{
-  color:#fff;
-  margin-right:18px;
-  text-decoration:none;
-  font-size:14px;
-  opacity:.85
-}
-nav a:hover{opacity:1}
+header{background:#06261c;position:sticky;top:0;z-index:100}
+.header-box{display:flex;flex-direction:column;align-items:center;padding:12px 0}
+.logo{color:#fff;font-size:20px;font-weight:900;margin-bottom:6px}
+nav{display:flex;gap:12px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-size:13px}
 
 /* HERO */
 .hero{
-  height:80vh;
+  min-height:55vh;
   background:linear-gradient(135deg,#06261c,#0a8f5c);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  color:#fff
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;color:#fff;padding:20px
 }
-.hero h1{font-size:46px;font-weight:900;margin-bottom:15px}
+.hero h1{font-size:30px;font-weight:900}
 
 /* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:25px;
-  margin-top:40px
-}
-
-/* CARD */
+.grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}
 .card{
-  background:#fff;
-  padding:25px;
-  border-radius:16px;
-  text-align:center;
-  box-shadow:0 15px 35px rgba(0,0,0,.12)
+  background:#fff;padding:16px;border-radius:14px;
+  text-align:center;font-weight:700;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  cursor:grab;position:relative
+}
+.card button{
+  position:absolute;top:6px;left:6px;
+  background:#c0392b;color:#fff;border:none;
+  border-radius:50%;width:26px;height:26px
 }
 
 /* FORM */
-form{
-  max-width:500px;
-  margin:40px auto 0
-}
-form input, form button{
-  width:100%;
-  padding:14px;
-  margin-bottom:15px;
-  border-radius:10px;
-  border:1px solid #ccc;
+form{margin-top:20px}
+input,select,button{
+  width:100%;padding:14px;margin-bottom:12px;
+  border-radius:10px;border:1px solid #ccc;
   font-family:'Cairo'
 }
-form button{
-  background:#0a8f5c;
-  color:white;
-  font-weight:800;
-  border:none;
-  cursor:pointer
-}
-form button:hover{background:#08724a}
+button{background:#0a8f5c;color:#fff;font-weight:900;border:none}
 
 /* TABLE */
-table{
-  width:100%;
-  border-collapse:collapse;
-  margin-top:30px
-}
-th,td{
-  padding:14px;
-  text-align:center;
-  border-bottom:1px solid #ddd
-}
-th{
-  background:#06261c;
-  color:#fff
-}
+.table-box{overflow-x:auto;margin-top:15px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;text-align:center;border-bottom:1px solid #ddd}
+th{background:#06261c;color:#fff}
 
 /* FOOTER */
-footer{
-  background:#06261c;
-  color:#fff;
-  text-align:center;
-  padding:35px 15px;
-  line-height:2
-}
+footer{background:#06261c;color:#fff;text-align:center;padding:24px 15px;line-height:2}
 footer strong{color:#0a8f5c}
+
+@media(min-width:768px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <div class="container flex">
+  <div class="container header-box">
     <div class="logo">🏆 بطولة الحداء</div>
     <nav>
-      <a href="#home">الرئيسية</a>
       <a href="#villages">القرى</a>
-      <a href="#info">معلومات</a>
       <a href="#teams">الفرق</a>
-      <a href="#matches">المباريات</a>
+      <a href="#admin">لوحة التحكم</a>
     </nav>
   </div>
 </header>
 
-<section class="hero" id="home">
+<section class="hero">
   <div>
     <h1>بطولة الحداء لكرة القدم</h1>
-    <p>منصة تنظيم وتوثيق النشاط الرياضي في مديرية الحداء</p>
+    <p>منصة تنظيم وتوثيق محلية</p>
   </div>
 </section>
 
 <section id="villages">
   <div class="container">
     <h2 class="title">قرى مديرية الحداء</h2>
-    <p class="desc">
-      تمثل البطولة جميع قرى وعزل مديرية الحداء بمحافظة ذمار دون استثناء،
-      وتسعى لتعزيز روح المنافسة والتعاون بين شباب المنطقة.
-    </p>
-    <div class="grid">
-      <div class="card">بوسان</div>
-      <div class="card">بيت القاضي</div>
-      <div class="card">وادي الحداء</div>
-      <div class="card">السحول</div>
-      <div class="card">بني زياد</div>
-      <div class="card">بني بخيت</div>
-    </div>
-  </div>
-</section>
-
-<section id="info">
-  <div class="container">
-    <h2 class="title">معلومات عن الموقع</h2>
-    <p class="desc">
-      هذا الموقع منصة توثيقية وتنظيمية مستقلة،
-      أُنشئت بهدف جمع وتنظيم بيانات الفرق والمباريات
-      في مديرية الحداء – محافظة ذمار،
-      ويعتمد الموقع على الإدخال اليدوي للبيانات من قبل القائمين عليه،
-      دون الاعتماد على مصادر خارجية أو محتوى غير موثّق.
-    </p>
+    <div class="grid" id="villagesList"></div>
   </div>
 </section>
 
 <section id="teams">
   <div class="container">
-    <h2 class="title">تسجيل الفرق</h2>
-
+    <h2 class="title">تسجيل فريق</h2>
     <form id="teamForm">
-      <input type="text" id="teamName" placeholder="اسم الفريق" required>
-      <input type="text" id="teamVillage" placeholder="القرية" required>
-      <button type="submit">إضافة الفريق</button>
+      <input id="teamName" placeholder="اسم الفريق" required>
+      <select id="teamVillage" required></select>
+      <button>إضافة الفريق</button>
     </form>
 
-    <table id="teamsTable">
-      <tr><th>اسم الفريق</th><th>القرية</th></tr>
-    </table>
+    <div class="table-box">
+      <table id="teamsTable">
+        <tr><th>الفريق</th><th>القرية</th></tr>
+      </table>
+    </div>
   </div>
 </section>
 
-<section id="matches">
+<section id="admin">
   <div class="container">
-    <h2 class="title">تسجيل المباريات</h2>
+    <h2 class="title">لوحة التحكم (محمية)</h2>
+    <input id="adminPass" placeholder="كلمة السر">
+    <button onclick="login()">دخول</button>
 
-    <form id="matchForm">
-      <input type="text" id="teamA" placeholder="الفريق الأول" required>
-      <input type="text" id="teamB" placeholder="الفريق الثاني" required>
-      <input type="text" id="score" placeholder="النتيجة (مثال 2-1)" required>
-      <button type="submit">إضافة المباراة</button>
-    </form>
-
-    <table id="matchesTable">
-      <tr><th>المباراة</th><th>النتيجة</th></tr>
-    </table>
+    <div id="adminPanel" style="display:none">
+      <form id="villageForm">
+        <input id="villageName" placeholder="اسم القرية">
+        <button>إضافة قرية</button>
+      </form>
+    </div>
   </div>
 </section>
 
 <footer>
-  <p>
-    موقع توثيقي وتنظيمي لخدمة النشاط الرياضي  
-    في جميع قرى وعزل مديرية الحداء – محافظة ذمار
-  </p>
-  <p>
-    <strong>برمجة وتصميم: محمد زياد</strong>
-  </p>
-  <p>
-    📞 772353780
-  </p>
+  <p>موقع محلي توثيقي</p>
+  <p><strong>برمجة وتصميم: محمد زياد</strong></p>
+  <p>📞 772353780</p>
 </footer>
 
 <script>
-// TEAMS
-document.getElementById("teamForm").onsubmit=function(e){
-  e.preventDefault();
-  teamsTable.innerHTML+=`
-    <tr>
-      <td>${teamName.value}</td>
-      <td>${teamVillage.value}</td>
-    </tr>`;
-  this.reset();
+const ADMIN_PASSWORD="1234";
+
+let villages=JSON.parse(localStorage.getItem("villages"))||[
+  "بيت القاضي","وادي الحداء","السحول","بني زياد","بني بخيت"
+];
+
+function render(){
+  villagesList.innerHTML="";
+  teamVillage.innerHTML="";
+  villages.forEach((v,i)=>{
+    villagesList.innerHTML+=`
+      <div class="card" draggable="true" ondragstart="drag(${i})" ondragover="event.preventDefault()" ondrop="drop(${i})">
+        ${v}
+        <button onclick="removeVillage(${i})">×</button>
+      </div>`;
+    teamVillage.innerHTML+=`<option>${v}</option>`;
+  });
+  localStorage.setItem("villages",JSON.stringify(villages));
 }
 
-// MATCHES
-document.getElementById("matchForm").onsubmit=function(e){
-  e.preventDefault();
-  matchesTable.innerHTML+=`
-    <tr>
-      <td>${teamA.value} × ${teamB.value}</td>
-      <td>${score.value}</td>
-    </tr>`;
-  this.reset();
+function removeVillage(i){villages.splice(i,1);render();}
+let dragIndex;
+function drag(i){dragIndex=i;}
+function drop(i){
+  [villages[dragIndex],villages[i]]=[villages[i],villages[dragIndex]];
+  render();
 }
+
+villageForm.onsubmit=e=>{
+  e.preventDefault();
+  villages.push(villageName.value.trim());
+  villageForm.reset();
+  render();
+}
+
+teamForm.onsubmit=e=>{
+  e.preventDefault();
+  teamsTable.innerHTML+=`<tr><td>${teamName.value}</td><td>${teamVillage.value}</td></tr>`;
+  teamForm.reset();
+}
+
+function login(){
+  if(adminPass.value===ADMIN_PASSWORD){
+    adminPanel.style.display="block";
+    adminPass.style.display="none";
+  }else alert("كلمة السر خطأ");
+}
+
+render();
 </script>
 
 </body>
